@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+  <p>Hello there</p>
+  <form action="" method="post">
+    {{ form.csrf_token }}
+
+    {{ form.name(
+    oninvalid="this.setCustomValidity('Enter a  name.')",
+    oninput="this.setCustomValidity('')") }}
+
+    {{ form.submit() }}
+
+</form>
+{% endblock %}
